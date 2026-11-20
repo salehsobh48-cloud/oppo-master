@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPPO MASTER</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b100e;color:#fff;font-family:Arial}
+header{padding:25px;background:linear-gradient(135deg,#103b27,#07120b)}
+.logo{font-size:28px;font-weight:bold;color:#48df91}
+p{color:#aab9b0;line-height:1.8}
+main{padding:18px}
+.hero,.card,.panel{background:#151e18;border:1px solid #284532;border-radius:18px;padding:18px;margin-bottom:14px}
+.hero h2{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{margin:0;cursor:pointer;min-height:125px}
+.card:active{transform:scale(.97)}
+.icon{font-size:28px}
+.card h3{margin:10px 0}
+.card p{font-size:12px;margin:0}
+button{background:#39c77c;border:0;padding:12px 18px;border-radius:10px;font-weight:bold}
+#result{display:none}
+li{margin-bottom:12px;line-height:1.8}
+footer{text-align:center;color:#75877b;padding:25px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">OPPO MASTER</div>
+<p>Smart Tools · مساعد هاتفك الذكي</p>
+</header>
+
+<main>
+<div class="hero">
+<h2>أهلاً بك 👋</h2>
+<p>اكتشف حلول هاتفك، وحافظ على البطارية والأداء، وتعلّم استخدام جهازك باحتراف.</p>
+</div>
+
+<div class="grid">
+<div class="card" onclick="show('battery')">
+<div class="icon">🔋</div><h3>البطارية</h3><p>حافظ على عمر البطارية</p>
+</div>
+<div class="card" onclick="show('speed')">
+<div class="icon">⚡</div><h3>الأداء</h3><p>حل البطء والتهنيج</p>
+</div>
+<div class="card" onclick="show('storage')">
+<div class="icon">🧹</div><h3>المساحة</h3><p>إدارة التخزين</p>
+</div>
+<div class="card" onclick="show('fix')">
+<div class="icon">🛠️</div><h3>حل المشاكل</h3><p>مركز المساعدة</p>
+</div>
+<div class="card" onclick="show('security')">
+<div class="icon">🔐</div><h3>الحماية</h3><p>الأمان والخصوصية</p>
+</div>
+<div class="card" onclick="show('pro')">
+<div class="icon">⭐</div><h3>PRO</h3><p>الخدمات الاحترافية</p>
+</div>
+</div>
+
+<div class="panel" id="result"></div>
+</main>
+
+<footer>OPPO MASTER © 2026</footer>
+
+<script>
+const data={
+battery:["🔋 نصائح البطارية",[
+"قلّل سطوع الشاشة عند عدم الحاجة.",
+"تجنب الحرارة العالية أثناء الشحن.",
+"استخدم شاحنًا وكابلًا مناسبين.",
+"راجع التطبيقات الأكثر استهلاكًا للبطارية.",
+"فعّل وضع توفير الطاقة عند الحاجة."
+]],
+speed:["⚡ تحسين الأداء",[
+"أعد تشغيل الهاتف إذا استمر البطء.",
+"أغلق التطبيقات التي لا تستخدمها.",
+"احتفظ بمساحة تخزين فارغة.",
+"حدّث التطبيقات من مصادر موثوقة.",
+"تجنب تطبيقات التسريع غير الموثوقة."
+]],
+storage:["🧹 إدارة المساحة",[
+"راجع الملفات الكبيرة في مدير الملفات.",
+"احذف التنزيلات غير الضرورية.",
+"راجع الصور والفيديوهات قبل حذفها.",
+"احتفظ بنسخة احتياطية من الملفات المهمة."
+]],
+fix:["🛠️ حل المشاكل",[
+"البطء: أعد تشغيل الجهاز وراجع مساحة التخزين.",
+"السخونة: أوقف الاستخدام الثقيل واترك الهاتف يبرد.",
+"الشحن: افحص الكابل والشاحن ومصدر الكهرباء.",
+"تعطل التطبيقات: حدّث التطبيق وأعد تشغيل الهاتف."
+]],
+security:["🔐 حماية الهاتف",[
+"استخدم قفل شاشة قوي.",
+"لا تثبت تطبيقات مجهولة.",
+"لا تشارك رموز التحقق.",
+"راجع صلاحيات التطبيقات.",
+"احتفظ بنسخة احتياطية."
+]],
+pro:["⭐ OPPO MASTER PRO",[
+"شروحات متقدمة لأجهزة OPPO.",
+"أدلة إعدادات احترافية.",
+"خدمات مساعدة خاصة.",
+"محتوى مميز سيتم تطويره لاحقًا."
+]]
+};
+
+function show(key){
+const box=document.getElementById("result");
+const item=data[key];
+box.style.display="block";
+box.innerHTML="<h2>"+item[0]+"</h2><ul>"+
+item[1].map(x=>"<li>"+x+"</li>").join("")+
+"</ul><button onclick='hide()'>رجوع</button>";
+box.scrollIntoView({behavior:"smooth"});
+}
+function hide(){
+document.getElementById("result").style.display="none";
+}
+</script>
+</body>
+                           </html>
+                           
